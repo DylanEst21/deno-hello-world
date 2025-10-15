@@ -32,13 +32,17 @@ async function handler(_req: Request): Promise<Response> {
     handlePreFlightRequest();
   }
 
+  const url = new URL(_req.url);
+  const userWord = (url.searchParams.get("word_guess") ?? "centrale").trim().toLowerCase();
+
   const headers = new Headers();
   headers.append("Content-Type", "application/json");
 
   const similarityRequestBody = JSON.stringify({
-    word1: "centrale",
+    word1: userWord,
     word2: "supelec",
   });
+
 
   const requestOptions = {
     method: "POST",
