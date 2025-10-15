@@ -33,7 +33,7 @@ async function handler(_req: Request): Promise<Response> {
   }
 
   const url = new URL(_req.url);
-  const userWord = (url.searchParams.get("wordGuess") ?? "centrale");
+  const userWord = url.searchParams.get("wordGuess");
 
   const headers = new Headers();
   headers.append("Content-Type", "application/json");
