@@ -29,7 +29,7 @@ async function handler(_req: Request): Promise<Response> {
   };
 
   try {
-    const response = await fetch("https://word2vec.nicolasfley.fr/similarity", requestOptions);
+    const response = await fetch("https://word2vec.nicolasfley.fr/similarity", requestOptions);   // appel à un autre API qui va faire le calcul
 
     if (!response.ok) {
       console.error(`Error: ${response.statusText}`);
