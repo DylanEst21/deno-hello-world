@@ -3,3 +3,4 @@ async function handler(_req: Request): Promise<Response> {
 }
 
 Deno.serve(handler);
+// test
