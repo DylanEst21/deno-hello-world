@@ -29,7 +29,7 @@ function handlePreFlightRequest(): Response {
 
 async function handler(_req: Request): Promise<Response> {
   if (_req.method == "OPTIONS") {
-    handlePreFlightRequest();
+    return handlePreFlightRequest();
   }
 
   const url = new URL(_req.url);
